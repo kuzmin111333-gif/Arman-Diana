@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Свадьба Армана и Дианы</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#fbf8f6;
+color:#2b2b2b;
+}
+
+.container{
+max-width:520px;
+margin:auto;
+padding:40px 20px;
+text-align:center;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url("https://media.istockphoto.com/id/2090025382/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BC%D1%83%D0%B6%D1%87%D0%B8%D0%BD%D0%B0-%D0%BD%D0%B5%D0%B6%D0%BD%D0%BE-%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D1%82-%D0%BD%D0%B5%D0%B2%D0%B5%D1%81%D1%82%D1%83-%D0%B7%D0%B0-%D1%80%D1%83%D0%BA%D1%83-%D1%81-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%BC-%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%BC-%D0%BE%D0%B1%D1%80%D1%83%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC-%D0%BA%D0%BE%D0%BB%D1%8C%D1%86%D0%BE%D0%BC-%D1%83%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5.jpg?s=612x612&w=0&k=20&c=irTqOP_CxnuEDvSuZTFws2XzLDX5If8KUxWNIB4EDw4=");
+background-size:cover;
+background-position:center;
+}
+
+.names{
+font-family:Playfair Display;
+font-size:44px;
+margin-bottom:10px;
+animation:fadeUp 1.5s ease;
+}
+
+.date{
+letter-spacing:3px;
+margin-bottom:20px;
+animation:fadeUp 2s ease;
+}
+
+.timer{
+font-size:20px;
+margin-top:10px;
+animation:fadeUp 2.5s ease;
+}
+
+.section{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+font-family:Playfair Display;
+margin-bottom:20px;
+font-size:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+margin-top:20px;
+}
+
+.program{
+text-align:left;
+}
+
+.program div{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+border-radius:14px;
+}
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:14px 26px;
+background:black;
+color:white;
+border-radius:12px;
+text-decoration:none;
+font-weight:500;
+}
+
+.map{
+border-radius:16px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+cursor:pointer;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+.color-palette{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:10px;
+}
+
+.color{
+width:50px;
+height:50px;
+border-radius:50%;
+border:3px solid white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="names">Арман и Диана</div>
+<div class="date">16 сентября 2026</div>
+<div class="timer" id="timer"></div>
+</section>
+
+<!-- ПРИГЛАШЕНИЕ -->
+<section class="container section">
+<h2>Дорогие родные и близкие</h2>
+<p>
+Нам очень хочется, чтобы в этот важный для нас день, именно Вы были с нами!
+</p>
+</section>
+
+<!-- ИСТОРИЯ -->
+<section class="container section">
+<h2>Наша история</h2>
+<div class="gallery">
+<img src="https://newflora.ru/img/123/resize:fill:576:576:0:0/plain/https://newflora.ru/wp-content/uploads/2018/10/14_svadbuk_Newflora.jpg@jpg">
+<img src="https://areta-flowers.ru/media/plg_system_vmmagicthumb/magictoolbox_cache/2deb0600714fef155ed12324a046b1c5/8/9/890/original/2252012197/173.jpg">
+<img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600">
+</div>
+</section>
+
+<!-- ПРОГРАММА -->
+<section class="container section">
+<h2>Программа дня</h2>
+
+<div class="card program">
+<div><span>14:00</span><span>Сбор гостей</span></div>
+<div><span>15:00</span><span>Банкет</span></div>
+<div><span>21:00</span><span>Завершение вечера</span></div>
+</div>
+
+</section>
+
+<!-- ДРЕСС-КОД -->
+<section class="container section">
+<h2>Дресс-код</h2>
+
+<div class="card">
+<p style="margin-bottom:20px;">
+Мы будем рады, если вы поддержите цветовую палитру нашей свадьбы
+</p>
+
+<div class="color-palette">
+<div class="color" style="background:#E8DCD0"></div>
+<div class="color" style="background:#D8C3A5"></div>
+<div class="color" style="background:#CDB4DB"></div>
+<div class="color" style="background:#BFD8B8"></div>
+<div class="color" style="background:#F4C2C2"></div>
+</div>
+
+</div>
+</section>
+
+<!-- ЛОКАЦИЯ -->
+<section class="container section">
+<h2>Место проведения</h2>
+
+<div class="card">
+<p>Ресторан Аура</p>
+<p>г. Саратов, ул. Им. Сакко и Ванцетти, 64а</p>
+
+<div class="map">
+<iframe
+src="https://maps.google.com/maps?q=saratov&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="250"
+frameborder="0">
+</iframe>
+</div>
+
+<a class="button" href="https://www.google.com/maps/place/Nur+Sultan/@51.5311732,46.0209447,20.68z/data=!4m10!1m2!2m1!1z0KHQsNGA0LDRgtC-0LIg0LDRg9GA0LAg0LHQsNC90LrQtdGC0L3Ri9C5INC30LDQuw!3m6!1s0x4114c7b93cb93395:0x935639b54dc487c9!8m2!3d51.5312795!4d46.0211197!15sCjHQodCw0YDQsNGC0L7QsiDQsNGD0YDQsCDQsdCw0L3QutC10YLQvdGL0Lkg0LfQsNC7WjMiMdGB0LDRgNCw0YLQvtCyINCw0YPRgNCwINCx0LDQvdC60LXRgtC90YvQuSDQt9Cw0LuSAQpyZXN0YXVyYW504AEA!16s%2Fg%2F11rwngc96j?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D">Открыть в Google Maps</a>
+
+</div>
+</section>
+
+<!-- RSVP -->
+<section class="container section">
+<h2>Подтвердите присутствие</h2>
+<p>Мы ждём Вас на первом празднике нашей семьи!</p>
+
+<div class="card">
+<p>Пожалуйста, ответьте до 1 августа</p>
+<a class="button" href="#">Ответить</a>
+</div>
+
+</section>
+
+<!-- МУЗЫКА -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" onclick="toggleMusic()">♪</div>
+
+<script>
+const weddingDate = new Date("Aug 20, 2026 15:00:00").getTime();
+
+setInterval(() => {
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000*60*60*24));
+const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+
+document.getElementById("timer").innerHTML =
+`${days} дней ${hours} часов ${minutes} минут`;
+},1000);
+
+function toggleMusic(){
+const music = document.getElementById("music");
+music.paused ? music.play() : music.pause();
+}
+
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+</script>
+
+</body>
+</html>
